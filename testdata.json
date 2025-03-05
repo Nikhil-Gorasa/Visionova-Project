@@ -1,0 +1,194 @@
+[
+  {
+    "sample_id": "T1",
+    "type": "Tomato",
+    "freshness": "Fresh",
+    "ripeness": "Unripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 40.0, "B_435nm": 45.0, "C_460nm": 50.0, "D_485nm": 55.0, "E_510nm": 70.0, "F_535nm": 65.0,
+      "G_560nm": 50.0, "H_585nm": 40.0, "R_610nm": 30.0, "I_645nm": 25.0, "S_680nm": 20.0, "J_705nm": 30.0,
+      "T_730nm": 35.0, "U_760nm": 40.0, "V_810nm": 45.0, "W_860nm": 50.0, "K_900nm": 55.0, "L_940nm": 60.0
+    }
+  },
+  {
+    "sample_id": "B1",
+    "type": "Banana",
+    "freshness": "Fresh",
+    "ripeness": "Unripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 35.0, "B_435nm": 40.0, "C_460nm": 45.0, "D_485nm": 50.0, "E_510nm": 70.0, "F_535nm": 65.0,
+      "G_560nm": 50.0, "H_585nm": 40.0, "R_610nm": 30.0, "I_645nm": 25.0, "S_680nm": 20.0, "J_705nm": 30.0,
+      "T_730nm": 35.0, "U_760nm": 40.0, "V_810nm": 50.0, "W_860nm": 60.0, "K_900nm": 70.0, "L_940nm": 80.0
+    }
+  },
+  {
+    "sample_id": "B2",
+    "type": "Banana",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "Low",
+    "spectral_values": {
+      "A_410nm": 30.0, "B_435nm": 35.0, "C_460nm": 40.0, "D_485nm": 45.0, "E_510nm": 50.0, "F_535nm": 60.0,
+      "G_560nm": 80.0, "H_585nm": 100.0, "R_610nm": 70.0, "I_645nm": 50.0, "S_680nm": 40.0, "J_705nm": 35.0,
+      "T_730nm": 30.0, "U_760nm": 25.0, "V_810nm": 20.0, "W_860nm": 15.0, "K_900nm": 10.0, "L_940nm": 8.0
+    }
+  },
+  {
+    "sample_id": "A1",
+    "type": "Apple",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 35.0, "B_435nm": 40.0, "C_460nm": 45.0, "D_485nm": 50.0, "E_510nm": 55.0, "F_535nm": 60.0,
+      "G_560nm": 50.0, "H_585nm": 70.0, "R_610nm": 200.0, "I_645nm": 120.0, "S_680nm": 90.0, "J_705nm": 40.0,
+      "T_730nm": 35.0, "U_760nm": 30.0, "V_810nm": 25.0, "W_860nm": 20.0, "K_900nm": 15.0, "L_940nm": 10.0
+    }
+  },
+  {
+    "sample_id": "M1",
+    "type": "Mango",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 30.0, "B_435nm": 35.0, "C_460nm": 40.0, "D_485nm": 45.0, "E_510nm": 60.0, "F_535nm": 80.0,
+      "G_560nm": 100.0, "H_585nm": 120.0, "R_610nm": 90.0, "I_645nm": 70.0, "S_680nm": 60.0, "J_705nm": 50.0,
+      "T_730nm": 40.0, "U_760nm": 35.0, "V_810nm": 30.0, "W_860nm": 25.0, "K_900nm": 20.0, "L_940nm": 15.0
+    }
+  },
+  {
+    "sample_id": "M2",
+    "type": "Mango",
+    "freshness": "Not Fresh",
+    "ripeness": "Overripe",
+    "pesticides": "High",
+    "spectral_values": {
+      "A_410nm": 25.0, "B_435nm": 30.0, "C_460nm": 35.0, "D_485nm": 40.0, "E_510nm": 50.0, "F_535nm": 70.0,
+      "G_560nm": 90.0, "H_585nm": 110.0, "R_610nm": 80.0, "I_645nm": 60.0, "S_680nm": 50.0, "J_705nm": 40.0,
+      "T_730nm": 30.0, "U_760nm": 25.0, "V_810nm": 20.0, "W_860nm": 15.0, "K_900nm": 10.0, "L_940nm": 8.0
+    }
+  },
+  {
+    "sample_id": "PA1",
+    "type": "Papaya",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "Low",
+    "spectral_values": {
+      "A_410nm": 35.0, "B_435nm": 40.0, "C_460nm": 45.0, "D_485nm": 50.0, "E_510nm": 55.0, "F_535nm": 70.0,
+      "G_560nm": 90.0, "H_585nm": 130.0, "R_610nm": 100.0, "I_645nm": 80.0, "S_680nm": 60.0, "J_705nm": 45.0,
+      "T_730nm": 40.0, "U_760nm": 35.0, "V_810nm": 30.0, "W_860nm": 25.0, "K_900nm": 20.0, "L_940nm": 15.0
+    }
+  },
+  {
+    "sample_id": "G1",
+    "type": "Guava",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 40.0, "B_435nm": 45.0, "C_460nm": 50.0, "D_485nm": 55.0, "E_510nm": 80.0, "F_535nm": 100.0,
+      "G_560nm": 90.0, "H_585nm": 70.0, "R_610nm": 50.0, "I_645nm": 40.0, "S_680nm": 35.0, "J_705nm": 30.0,
+      "T_730nm": 25.0, "U_760nm": 20.0, "V_810nm": 15.0, "W_860nm": 10.0, "K_900nm": 8.0, "L_940nm": 5.0
+    }
+  },
+  {
+    "sample_id": "PM1",
+    "type": "Pomegranate",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "Low",
+    "spectral_values": {
+      "A_410nm": 30.0, "B_435nm": 35.0, "C_460nm": 40.0, "D_485nm": 45.0, "E_510nm": 50.0, "F_535nm": 55.0,
+      "G_560nm": 60.0, "H_585nm": 70.0, "R_610nm": 200.0, "I_645nm": 130.0, "S_680nm": 100.0, "J_705nm": 40.0,
+      "T_730nm": 35.0, "U_760nm": 30.0, "V_810nm": 25.0, "W_860nm": 20.0, "K_900nm": 15.0, "L_940nm": 10.0
+    }
+  },
+  {
+    "sample_id": "PO1",
+    "type": "Potato",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 20.0, "B_435nm": 25.0, "C_460nm": 30.0, "D_485nm": 35.0, "E_510nm": 40.0, "F_535nm": 45.0,
+      "G_560nm": 50.0, "H_585nm": 55.0, "R_610nm": 60.0, "I_645nm": 50.0, "S_680nm": 45.0, "J_705nm": 40.0,
+      "T_730nm": 35.0, "U_760nm": 30.0, "V_810nm": 25.0, "W_860nm": 20.0, "K_900nm": 15.0, "L_940nm": 10.0
+    }
+  },
+  {
+    "sample_id": "O1",
+    "type": "Onion",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "Low",
+    "spectral_values": {
+      "A_410nm": 25.0, "B_435nm": 30.0, "C_460nm": 35.0, "D_485nm": 40.0, "E_510nm": 45.0, "F_535nm": 50.0,
+      "G_560nm": 55.0, "H_585nm": 60.0, "R_610nm": 70.0, "I_645nm": 65.0, "S_680nm": 60.0, "J_705nm": 50.0,
+      "T_730nm": 45.0, "U_760nm": 40.0, "V_810nm": 35.0, "W_860nm": 30.0, "K_900nm": 25.0, "L_940nm": 20.0
+    }
+  },
+  {
+    "sample_id": "CF1",
+    "type": "Cauliflower",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 30.0, "B_435nm": 35.0, "C_460nm": 40.0, "D_485nm": 45.0, "E_510nm": 50.0, "F_535nm": 55.0,
+      "G_560nm": 60.0, "H_585nm": 65.0, "R_610nm": 50.0, "I_645nm": 45.0, "S_680nm": 40.0, "J_705nm": 35.0,
+      "T_730nm": 30.0, "U_760nm": 25.0, "V_810nm": 20.0, "W_860nm": 15.0, "K_900nm": 10.0, "L_940nm": 8.0
+    }
+  },
+  {
+    "sample_id": "SP1",
+    "type": "Spinach",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "Low",
+    "spectral_values": {
+      "A_410nm": 45.0, "B_435nm": 50.0, "C_460nm": 55.0, "D_485nm": 60.0, "E_510nm": 85.0, "F_535nm": 110.0,
+      "G_560nm": 95.0, "H_585nm": 65.0, "R_610nm": 45.0, "I_645nm": 40.0, "S_680nm": 35.0, "J_705nm": 30.0,
+      "T_730nm": 25.0, "U_760nm": 20.0, "V_810nm": 15.0, "W_860nm": 10.0, "K_900nm": 8.0, "L_940nm": 5.0
+    }
+  },
+  {
+    "sample_id": "OK1",
+    "type": "Okra",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 40.0, "B_435nm": 45.0, "C_460nm": 50.0, "D_485nm": 55.0, "E_510nm": 80.0, "F_535nm": 100.0,
+      "G_560nm": 90.0, "H_585nm": 60.0, "R_610nm": 40.0, "I_645nm": 35.0, "S_680nm": 30.0, "J_705nm": 25.0,
+      "T_730nm": 20.0, "U_760nm": 15.0, "V_810nm": 10.0, "W_860nm": 8.0, "K_900nm": 5.0, "L_940nm": 3.0
+    }
+  },
+  {
+    "sample_id": "EG1",
+    "type": "Eggplant",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "Low",
+    "spectral_values": {
+      "A_410nm": 50.0, "B_435nm": 55.0, "C_460nm": 60.0, "D_485nm": 65.0, "E_510nm": 70.0, "F_535nm": 60.0,
+      "G_560nm": 50.0, "H_585nm": 40.0, "R_610nm": 80.0, "I_645nm": 90.0, "S_680nm": 100.0, "J_705nm": 50.0,
+      "T_730nm": 45.0, "U_760nm": 40.0, "V_810nm": 35.0, "W_860nm": 30.0, "K_900nm": 25.0, "L_940nm": 20.0
+    }
+  },
+  {
+    "sample_id": "CH1",
+    "type": "Green Chili",
+    "freshness": "Fresh",
+    "ripeness": "Ripe",
+    "pesticides": "None",
+    "spectral_values": {
+      "A_410nm": 35.0, "B_435nm": 40.0, "C_460nm": 45.0, "D_485nm": 50.0, "E_510nm": 90.0, "F_535nm": 110.0,
+      "G_560nm": 100.0, "H_585nm": 70.0, "R_610nm": 50.0, "I_645nm": 40.0, "S_680nm": 35.0, "J_705nm": 30.0,
+      "T_730nm": 25.0, "U_760nm": 20.0, "V_810nm": 15.0, "W_860nm": 10.0, "K_900nm": 8.0, "L_940nm": 5.0
+    }
+  }
+]
