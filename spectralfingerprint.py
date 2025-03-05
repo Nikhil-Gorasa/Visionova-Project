@@ -24,11 +24,15 @@ try:
 except (FileNotFoundError, json.JSONDecodeError):
     known_fingerprints = {}
 
+# Rolling buffer to store past readings
 history_size = 3
 spectral_history = deque(maxlen=history_size)
 
 # Global flag to trigger labeling
 labeling_requested = False
+
+# Distance threshold for identifying known objects
+DISTANCE_THRESHOLD = 50.0  # Adjust this based on your data scale
 
 # Try connecting to Serial port
 try:
@@ -48,6 +52,10 @@ def identify_object(measured_fingerprint):
             min_distance = distance
             identified_object = obj_name
     
+    # If the minimum distance exceeds the threshold, classify as Unknown
+    if min_distance > DISTANCE_THRESHOLD:
+        identified_object = "Unknown (New Object)"
+    
     return identified_object, min_distance
 
 # Function to save fingerprints
@@ -61,7 +69,7 @@ def save_fingerprint(label, fingerprint):
 def ask_label(fingerprint):
     root = tk.Tk()
     root.withdraw()
-    label = simpledialog.askstring("Label Spectral Data", "Enter object name:")
+    label = simpledialog.askstring("Label Spectral Data", "New object detected! Enter object name:")
     if label:
         save_fingerprint(label, fingerprint)
     root.destroy()
@@ -88,11 +96,11 @@ ax_values.axis('off')
 ax.set_xlabel("Wavelength (nm)")
 ax.set_ylabel("Intensity")
 ax.set_title("Spectral Fingerprint Analysis")
-ax.legend()
 ax.grid(True)
 
 def read_and_plot():
     global labeling_requested
+    last_identified_object = None  # Track the last identified object to detect changes
 
     while True:
         try:
@@ -115,8 +123,14 @@ def read_and_plot():
             # Identify Object
             identified_object, confidence = identify_object(values)
 
-            # Print results in Terminal
-            print(f"🔎 Identified Object: {identified_object} | Confidence Score: {round(confidence, 2)}")
+            # Check if a new object is detected
+            if identified_object == "Unknown (New Object)" and identified_object != last_identified_object:
+                print(f"❓ New object detected! | Distance: {round(confidence, 2)} (exceeds threshold {DISTANCE_THRESHOLD})")
+                print("📝 Please press 'l' to label this new object.")
+            elif identified_object != "Unknown (New Object)":
+                print(f"🔎 Identified Object: {identified_object} | Confidence Score: {round(confidence, 2)}")
+
+            last_identified_object = identified_object  # Update last identified object
 
             # Store new data into rolling buffer
             spectral_history.append(values)
@@ -127,7 +141,7 @@ def read_and_plot():
                 alpha = (i + 1) / len(spectral_history)
                 ax.plot(wavelengths, spectrum, marker='o', linestyle='-', alpha=alpha)
 
-            # Plot reference fingerprint
+            # Plot reference fingerprint if not a new object
             if identified_object in known_fingerprints:
                 ax.plot(wavelengths, known_fingerprints[identified_object], 
                         marker='x', linestyle='--', color='r', 
@@ -136,7 +150,10 @@ def read_and_plot():
             # Update main plot labels
             ax.set_xlabel("Wavelength (nm)")
             ax.set_ylabel("Intensity")
-            ax.set_title(f"Identified: {identified_object} | Confidence: {round(confidence, 2)}")
+            title = f"Identified: {identified_object} | Distance: {round(confidence, 2)}"
+            if identified_object == "Unknown (New Object)":
+                title += "\nPress 'l' to label"
+            ax.set_title(title)
             ax.legend()
             ax.grid(True)
 
@@ -146,6 +163,8 @@ def read_and_plot():
             value_text = "Current Values:\n\n"
             for wav, val in zip(wavelengths, values):
                 value_text += f"{wav}nm: {val:.2f}\n"
+            if identified_object == "Unknown (New Object)":
+                value_text += "\nNew object! Press 'l' to label."
             ax_values.text(0.1, 0.95, value_text, 
                           transform=ax_values.transAxes,
                           verticalalignment='top',
@@ -155,7 +174,7 @@ def read_and_plot():
             plt.pause(0.1)
 
             # Check if labeling is requested
-            if labeling_requested:
+            if labeling_requested and identified_object == "Unknown (New Object)":
                 ask_label(values)
                 labeling_requested = False  # Reset the flag
 
@@ -167,7 +186,7 @@ def read_and_plot():
                 print("🔄 Reconnected to serial port.")
             except serial.SerialException as e:
                 print(f"❌ Failed to reconnect: {e}")
-                break  # Exit the loop if reconnection fails
+                break
 
         except KeyboardInterrupt:
             print("\n👋 Exiting gracefully...")
@@ -177,8 +196,8 @@ def read_and_plot():
 
 # Run user input checking in a separate thread
 input_thread = threading.Thread(target=check_user_input)
-input_thread.daemon = True  # Allows the program to exit even if this thread is running
+input_thread.daemon = True
 input_thread.start()
 
-# Run plotting in MAIN THREAD (fixes Matplotlib GUI issue)
+# Run plotting in MAIN THREAD
 read_and_plot()
