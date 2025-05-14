@@ -121,10 +121,6 @@ Run the Python scripts from your terminal. Ensure the serial connection is activ
 * **Wireless Communication:** Utilize the ESP8266's Wi-Fi to send data to a local network or cloud service, or receive data/commands.
 * **Expand Database:** Collect and add more diverse spectral fingerprints for a wider range of objects.
 
-## License
-
-[Specify your license here, e.g., MIT License, Apache 2.0 License, or state if proprietary.]
-
 ---
 
 **Project by:** Team Zenith
